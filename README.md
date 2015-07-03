@@ -115,18 +115,11 @@ security:
     - { path: ^/, roles: ROLE_USER }
 ```
 
-### Authentication
+### Authentication and users management
 Here we are!
-Now why not create a new user access ?
-Do not worry about the users.yml, as long as the path is correct, if the file does not exists,
-The application will {try} to create it for you.
 
-``` bash
-php app/console fsb-proxy:users:create [username] [password]
-```
-
-Both username and password arguments are optionnal, the command will ask for it if you do not provide it.
-You can also manually edit the users.yml file with a user information as an array:
+This bundle comes with a service called YamlUserProvider, providing users from a yaml file.
+To add an access, add a new yaml array of this user's informations :
 
 ``` yml
 # /path/of/your/users.yml
@@ -135,7 +128,16 @@ username:
   password: # the encrypted password
 ```
 
-### Extends
+You also have one command to create new users from the console :
+
+``` bash
+php app/console fsb-proxy:users:create [username] [password] [--all]
+```
+
+Both username and password arguments are optionnal, the command will ask for it if you do not provide it.
+The ````--override```` (or ````-o`````) option allow to replace an existing user's password (if the user does not exists, he will be created).
+
+### Extend the bundle
 The Bundle itself provides the security layer, with login and logout routes ;
 And a default login page, before "proxying" routes through the Guzzle client.
 
