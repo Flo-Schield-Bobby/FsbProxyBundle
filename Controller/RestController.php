@@ -18,7 +18,6 @@ class RestController extends Controller
 			'allow_redirects' => false,
 			'http_errors' => false,
 			'query' => $request->query->all(),
-			'headers' => $headers,
 			'body' => $request->getContent()
 		));
 
