@@ -128,7 +128,9 @@ username:
   password: # the encrypted password
 ```
 
-You also have one command to create new users from the console :
+You also have two commands to manage users from the console :
+
+To create a new user :
 
 ``` bash
 php app/console fsb-proxy:users:create [username] [password] [--all]
@@ -136,6 +138,15 @@ php app/console fsb-proxy:users:create [username] [password] [--all]
 
 Both username and password arguments are optionnal, the command will ask for it if you do not provide it.
 The ````--override```` (or ````-o`````) option allow to replace an existing user's password (if the user does not exists, he will be created).
+
+To remove an existing user :
+
+``` bash
+php app/console fsb-proxy:users:remove [username] [--all]
+```
+Username argument is optionnal, the command will ask for it if you do not provide it.
+The ````--all```` option allow to remove every existing users from the file.
+
 
 ### Extend the bundle
 The Bundle itself provides the security layer, with login and logout routes ;
