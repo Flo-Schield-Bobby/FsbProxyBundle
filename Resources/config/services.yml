@@ -1,0 +1,8 @@
+parameters:
+    fsb_proxy.provider.yaml_user_provider.class: Fsb\Bundle\ProxyBundle\Provider\YamlUserProvider
+
+services:
+    fsb_proxy.provider.yaml_user_provider:
+        class: %fsb_proxy.provider.yaml_user_provider.class%
+        arguments: [%users_provider_file_path%]
+

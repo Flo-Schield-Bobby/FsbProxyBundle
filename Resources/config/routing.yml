@@ -1,0 +1,20 @@
+fsb_proxy_login_page:
+    path:  /login
+    defaults:
+        _controller: FsbProxyBundle:Security/Authentication:login
+    methods: [GET]
+
+fsb_proxy_login_check_page:
+    path:  /login_check
+    methods: [POST]
+
+fsb_proxy_logout_page:
+    path:  /logout
+    methods: [GET]
+
+fsb_proxy_proxy_page:
+    path:     /{uri}
+    defaults:
+        _controller: FsbProxyBundle:Rest:proxy
+    requirements:
+        uri: .*

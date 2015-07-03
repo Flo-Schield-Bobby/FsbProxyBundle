@@ -1,0 +1,36 @@
+{
+	"name":        "fsb/proxy-bundle",
+	"type":        "symfony-bundle",
+	"description": "Authenticated symfony bundle: provides an authentication layer on top of a PHP proxy.",
+	"keywords": [
+		"bundle",
+		"proxy",
+		"symfony",
+		"rest",
+		"curl",
+		"client",
+		"authentication",
+		"security",
+		"HTTP client"
+	],
+	"homepage": "https://github.com/Flo-Schield-Bobby/FsbProxyBundle",
+	"license":  "MIT",
+	"authors": [
+		{
+			"name":     "Florent Schildknecht",
+			"email":    "florent.schildknecht@gmail.com",
+			"homepage": "http://floschild.me"
+		}
+	],
+	"require": {
+		"symfony/symfony": "~2.7",
+		"eightpoints/guzzle-bundle": "~3.0"
+	},
+	"target-dir": "Fsb/Bundle/ProxyBundle",
+	"autoload": {
+		"psr-0": {
+			"Fsb\\Bundle\\ProxyBundle\\": ""
+		}
+	},
+	"minimum-stability": "dev"
+}
